@@ -1,0 +1,52 @@
+{{!-- NAVBAR --}}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Movie Clubs</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/events">Events</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="row center">
+    {{!-- The poster and details of the movie --}}
+    <div class="col-2">
+        <div id="movie-club-id" data-id="{{this.id}}" class="card text-center">
+            <img id="add-card-img" data-poster="{{this.poster}}" src="{{this.poster}}" class="card-img-top" alt="...">
+            <div id="add-card-body" class="card-body">
+                <h3 id="add-card-title" data-title="{{this.title}}" class="card-title">{{this.title}}</h3>
+                <h5 id="add-card-date" data-date="{{this.date}}" class="card-title">{{this.date}}</h5>
+                <p id="add-card-text" data-plot="{{this.plot}}" class="card-text">{{this.plot}}</p>
+            </div>
+        </div>
+    </div>
+    {{!-- Asking if the user would like to rsvp --}}
+    <form method="POST" role="form">
+    <div class="form-group">
+      <label for="guest">Enter Guest Name</label>
+      <input id="guest-input" type="text" class="form-control">
+    </div>
+    <button id="guest-btn" type="submit" class="btn btn-info">Submit</button>
+  </form>
+  <div class="col-5 h-100 mb-4">
+    <div class="card text-white bg-dark mb-5">
+      <h1 class="card-title">Guest List:</h1>
+  {{#each guest}}
+      <div class="card-body" id={{this.dataValues.id}}>
+        <h3 class="card-title">{{this.dataValues.name}} <a class="guest-delete" href="#" id="{{this.dataValues.id}}"><svg class="bi bi-x-square-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm9.854 4.854a.5.5 0 0 0-.708-.708L8 7.293 4.854 4.146a.5.5 0 1 0-.708.708L7.293 8l-3.147 3.146a.5.5 0 0 0 .708.708L8 8.707l3.146 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.146z"/>
+</svg></a></h3>
+      </div>
+  {{/each}}
+    </div>
+  </div>
+</div>
+</div>

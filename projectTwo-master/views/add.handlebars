@@ -1,0 +1,46 @@
+<!--ADD NAVBAR-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Movie Clubs</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/events">Events</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="row center">
+    {{!-- Shows movie information so the user knows if this is the movie they want to schedule --}}
+    <div class="col-2">
+        <div class="card text-center">
+            <img id="add-card-img" data-poster="{{this.poster}}" src="{{this.poster}}" class="card-img-top" alt="...">
+            <div id="add-card-body" class="card-body">
+                <h3 id="add-card-title" data-title="{{this.title}}" class="card-title">{{this.title}}</h3>
+                <h5 id="add-card-date" data-date="{{this.date}}" class="card-title">{{this.date}}</h5>
+                <p id="add-card-text" data-plot="{{this.plot}}" class="card-text">{{this.plot}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <form method="POST" role="form">
+            {{!-- Asks the user to enter in the name for their club --}}
+            <label for="eventTitle">Enter the name of your movie club!</label>
+            <input type="text" class="form-control" id="eventTitle" placeholder="Enter the name of your movie club!">
+            {{!-- Lets the user select a time the club will take place --}}
+            <label for="eventTime" aria-placeholder="Enter date for your event">Enter the time for your event</label>
+            <input type="time" class="form-control" id="eventTime">
+            <label for="eventSubmit">When all of the information is correct, hit submit!</label>
+        </form>
+        {{!-- A sumbit and cancel button --}}
+        <a id="add-submit" href="#" class="btn btn-primary">Submit</a>
+        <a id="add-cancel" href="#" class="btn btn-danger">Cancel</a>
+    </div>
+</div>

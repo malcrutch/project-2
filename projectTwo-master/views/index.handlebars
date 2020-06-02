@@ -1,0 +1,77 @@
+<!--INDEX NAVBAR-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Movie Clubs</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="events-btn" href="/events">Events</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container text-center">
+  <h1 class="display-4">Movie Clubs</h1>
+  <p class="lead">Its like a drive-in movie theater, but on your couch!</p>
+</div>
+<div>
+  {{!-- The row of card templates --}}
+  <div class="row justify-content-md-center">
+    <div>
+      <div class="card text-center">
+        <div id="day-0" class="card-body">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card text-center">
+        <div id="day-1" class="card-body">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card text-center">
+        <div id="day-2" class="card-body">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card text-center">
+        <div id="day-3" class="card-body">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card text-center">
+        <div id="day-4" class="card-body">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card text-center">
+        <div id="day-5" class="card-body">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card text-center">
+        <div id="day-6" class="card-body">
+        </div>
+      </div>
+    </div>
+  </div>
+  {{!-- The search for a movie bar, this is hidden when the user first loads the page --}}
+  <form class="hide" method="GET" role="form">
+    <div class="input-group text-align-center" style="margin: auto; width: 50%">
+      <input type="text" placeholder="Search a movie or tv show!" class="form-control" id="search">
+      <div class="input-group-append"><button id="search-btn" type="submit" class="btn btn-info">Search</button>
+      </div>
+    </div>
+  </form>
+</div>
